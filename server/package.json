@@ -1,0 +1,49 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node .",
+    "predev": "yarn build",
+    "dev": "concurrently --kill-others 'nodemon .' 'yarn build --watch'",
+    "predebug": "yarn build",
+    "debug": "concurrently --kill-others 'nodemon --inspect .' 'yarn build --watch'",
+    "prepare": "husky install",
+    "lint": "eslint --fix \"src/**/*.{ts,js}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mohamed Assem <mohamed.abdullatief92@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.18.0",
+    "fastify-cors": "^6.0.1",
+    "fastify-helmet": "^5.3.1",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.1",
+    "fastify-swagger": "^4.7.0",
+    "lodash": "^4.17.21",
+    "redis": "^3.1.2",
+    "slugify": "^1.5.3",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.1",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^15.6.0",
+    "@types/redis": "^2.8.31",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "concurrently": "^6.2.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": ">=6",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.4"
+  }
+}
